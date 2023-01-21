@@ -14,6 +14,13 @@ function getComputerChoice() {
   }
 }
 
+//Make case-insensitive
+let computerSelection = getComputerChoice().toLowerCase();
+
+//Make case-insensitive
+let initialPlayerSelection = "ScIsSoRs";
+let playerSelection = initialPlayerSelection.toLowerCase();
+
 //Takes 2 parameters and compares them to output win/loss string
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "paper" && computerSelection === "rock") {
@@ -33,12 +40,30 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-//Make case-insensitive
-let finalComputerSelection = getComputerChoice().toLowerCase();
-let computerSelection = finalComputerSelection;
+/*  -Check whether player or computer win
+      -slice(-2) check whether smiley or frown? [x]
+      -if smiley then award point to player, if frown award point to computer
+      -let run for 5 rounds, output at end: you win, you lose, tie
+    -Output score tally in console somehow
+      -e.g. You: 1   Computer: 0   Rounds Remaining: 4
+      -Can store score values in variables.
+      -Use string from above example. Insert scores in template literal?
 
-//Make case-insensitive
-let playerSelection = "PaPeR";
-let finalPlayerSelection = playerSelection.toLowerCase();
+      -Use prompt to ask for player name?
+      -Store player name in variable.
+      -Can use template literal to insert players name. */
 
-console.log(playRound(finalPlayerSelection, finalComputerSelection));
+function game() {
+  for (let i = 0; i < 5; i++) {
+
+  }
+}
+
+const smiley = ":)";
+const frown = ":(";
+const tie = "tie";
+
+console.log(playRound(playerSelection, computerSelection));
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection).includes(frown));
