@@ -1,7 +1,6 @@
-//Return 3 string outputs from RNG(1, 3) to plug in playRound() function.
+//Return 3 string outputs from RNG(1, 3) to randomise computer choice(R,P,S). RNG numbers converted to strings.
 function getComputerChoice() {
   let randNum = Math.floor(Math.random() * 3) + 1;
-
   switch (randNum) {
     case 1:
       return "Rock";
@@ -15,7 +14,7 @@ function getComputerChoice() {
   }
 }
 
-//Takes 2 parameters and compares them to output win/loss string.
+//Takes 2 parameters (one from calling getComputerChoice(), one from user input via. prompt) and compares them to output a string.
 function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === "paper" && computerSelection === "rock") {
@@ -41,36 +40,35 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-//Variables used to check string to determine win/loss.
+//Variables used to check return string from playRound() to determine win/loss.
 const smiley = ":)";
 const frown = ":(";
 const tie = "tie";
 
-//Used to increment score string
+//Used to increment score string.
 let playerScore = 0;
 let computerScore = 0;
 
-//Loops 5 times, prompts user to enter R, P or S. Outputs win/loss string and score tally.
+//Loops 5 times, prompts player to enter R, P or S. Outputs playRound() return string and score tally.
+//Line 44-46 variables used to check for substring in return string. Line 49-50 variables used to keep score.
+//Defines playRound() parameters.
 function game() {
   for (let i = 0; i < 5; i++) {
+
     let playerSelection = prompt("Enter \"rock\", \"paper\" or \"scissors\": ").toLowerCase();
     let computerSelection = getComputerChoice().toLowerCase();
 
     if (playRound(playerSelection, computerSelection).includes(smiley)) {
-
       console.log(playRound(playerSelection, computerSelection));
       console.log(`Player: ${++playerScore}     Computer: ${computerScore}`);
 
     } else if (playRound(playerSelection, computerSelection).includes(frown)) {
-
       console.log(playRound(playerSelection, computerSelection));
       console.log(`Player: ${playerScore}     Computer: ${++computerScore}`);
 
     } else if (playRound(playerSelection, computerSelection).includes(tie)) {
-
       console.log(playRound(playerSelection, computerSelection));
       console.log(`Player: ${playerScore}     Computer: ${computerScore}`)
-
     }
   }
 }
