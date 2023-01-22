@@ -14,56 +14,50 @@ function getComputerChoice() {
   }
 }
 
-//Make case-insensitive
-let computerSelection = getComputerChoice().toLowerCase();
-
-//Make case-insensitive
-let initialPlayerSelection = "ScIsSoRs";
-let playerSelection = initialPlayerSelection.toLowerCase();
-
-//Takes 2 parameters and compares them to output win/loss string
+//Takes 2 parameters and compares them to output win/loss string.
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "paper" && computerSelection === "rock") {
-    return "You won this round! Paper beats rock. :)";
+    return "Computer chose rock. You won this round! :)";
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    return "You won this round! Rock beats scissors. :)";
+    return "Computer chose scissors. You won this round! :)";
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    return "You won this round! Scissors beats paper. :)";
+    return "Computer chose paper. You won this round! :)";
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    return "Sorry, you lose this round! Paper beats rock. :(";
+    return "Computer chose paper. Sorry, you lose this round! :(";
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    return "Sorry, you lose this round! Scissors beats paper. :(";
+    return "Computer chose scissors. Sorry, you lose this round! :(";
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    return "Sorry, you lose this round! Rock beats Scissors. :(";
+    return "Computer chose rock. Sorry, you lose this round! :(";
   } else if (playerSelection === computerSelection) {
-    return "It's a tie!";
+    return "Computer chose the same. It's a tie!";
   }
 }
 
-/*  -Check whether player or computer win
-      -slice(-2) check whether smiley or frown? [x]
-      -if smiley then award point to player, if frown award point to computer
-      -let run for 5 rounds, output at end: you win, you lose, tie
-    -Output score tally in console somehow
-      -e.g. You: 1   Computer: 0   Rounds Remaining: 4
-      -Can store score values in variables.
-      -Use string from above example. Insert scores in template literal?
-
-      -Use prompt to ask for player name?
-      -Store player name in variable.
-      -Can use template literal to insert players name. */
-
-function game() {
-  for (let i = 0; i < 5; i++) {
-
-  }
-}
-
+//Variables used to check string to determine win/loss.
 const smiley = ":)";
 const frown = ":(";
 const tie = "tie";
 
-console.log(playRound(playerSelection, computerSelection));
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection).includes(frown));
+//Used to increment score string
+let playerScore = 0;
+let computerScore = 0;
+
+//Loops 5 times, prompts user to enter R, P or S. Outputs win/loss string and score tally.
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt("Enter \"rock\", \"paper\" or \"scissors\": ").toLowerCase();
+    let computerSelection = getComputerChoice().toLowerCase();
+    if (playRound(playerSelection, computerSelection).includes(smiley)) {
+      console.log(playRound(playerSelection, computerSelection));
+      console.log(`Player: ${++playerScore}     Computer: ${computerScore}`);
+    } else if (playRound(playerSelection, computerSelection).includes(frown)) {
+      console.log(playRound(playerSelection, computerSelection));
+      console.log(`Player: ${playerScore}     Computer: ${++computerScore}`);
+    } else if (playRound(playerSelection, computerSelection).includes(tie)) {
+      console.log(playRound(playerSelection, computerSelection));
+      console.log(`Player: ${playerScore}     Computer: ${computerScore}`)
+    }
+  }
+}
+
+game();
