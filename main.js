@@ -90,3 +90,11 @@ function endMessage() {
 //Invoking functions.
 game();
 endMessage();
+
+//This game should be able to be played through buttons
+//Create 3 buttons for R, P and S
+//Buttons should have event listeners which call playRound() function w/ correct playerSelection every time.
+//Console.log() for above can be kept
+
+//Add div that displays results with DOM console.logs
+//Running score not Bo5/ Game is now 1st to 5
