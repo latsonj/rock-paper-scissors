@@ -1,17 +1,8 @@
-//Return 3 string outputs from RNG(1, 3) to randomise computer choice(R,P,S). RNG numbers converted to strings.
+//Refactor function into array and randomizes choice through math methods
 function getComputerChoice() {
-  let randNum = Math.floor(Math.random() * 3) + 1;
-  switch (randNum) {
-    case 1:
-      return "Rock";
-      break;
-    case 2:
-      return "Paper";
-      break;
-    case 3:
-      return "Scissors";
-      break;
-  }
+  let choices = ["rock", "paper", "scissors"]
+  let choiceIndex = Math.floor(Math.random() * choices.length);
+  return choices[choiceIndex];
 }
 
 //Takes 2 parameters (one from calling getComputerChoice(), one from user input via. prompt) and compares them to output a string.
@@ -56,7 +47,7 @@ function game() {
   for (let i = 0; i < 5; i++) {
 
     let playerSelection = prompt("Enter \"rock\", \"paper\" or \"scissors\": ").toLowerCase();
-    let computerSelection = getComputerChoice().toLowerCase();
+    let computerSelection = getComputerChoice();
 
     if (playRound(playerSelection, computerSelection).includes(smiley)) {
       console.log(playRound(playerSelection, computerSelection));
