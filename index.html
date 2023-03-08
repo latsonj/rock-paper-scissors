@@ -4,11 +4,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./main.js" defer></script>
+  <link rel="stylesheet" href="./styles.css">
   <title>RPS Game</title>
 </head>
-<body>
 
-  
-  <script src="./main.js"></script>
+<body>
+  <header class="header" id="header">
+    <img src="./images/rock-paper-scissors.png">
+    <h1 class="header text">Rock Paper Scissors</h1>
+  </header>
+
+  <section class="scores-container sections">
+    <div class="player-score-div">
+      <h2 class="player-score text">Player</h2>
+      <h3 class="player-score-num score numbers">0</h3></div>
+    <div class="computer-score-div">
+      <h2 class="computer-score text">Computer</h2>
+      <h3 class="computer-score-num score numbers">0</h3></div>
+  </section>
+
+  <section class="player-rps-choice sections button-display">
+    <p class="flavor text">You</p>
+      <div class="rps-container">
+        <button id="rock" class="buttons player-buttons"><img src="./images/rock.png">Rock</button>
+        <button id="paper" class="buttons player-buttons"><img src="./images/paper.png">Paper</button>
+        <button id="scissors" class="buttons player-buttons"><img src="./images/scissors.png">Scissors</button>
+      </div>
+  </section>
+
+  <p id="vs" class="flavor text">VS<p>
+
+  <section class="computer-rps-choice sections button-display">
+    <p class="flavor text">CPU</p>
+      <div class="rps-container">
+        <button id="rock" class="buttons computer-buttons"><img src="./images/rock.png">Rock</button>
+        <button id="paper" class="buttons computer-buttons"><img src="./images/paper.png">Paper</button>
+        <button id="scissors" class="buttons computer-buttons"><img src="./images/scissors.png">Scissors</button>
+      </div>
+  </section>
+
+  <section class="round-message-container sections container">
+    <p id="round message" class="text"></p>
+  </section>
+
+  <button id="play-again" class="buttons"><img src="./images/reload.png">Play again</button>
 </body>
 </html>

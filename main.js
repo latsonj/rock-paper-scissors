@@ -79,8 +79,8 @@ function endMessage() {
 }
 
 //Invoking functions.
-game();
-endMessage();
+//game();
+//endMessage();
 
 //This game should be able to be played through buttons
 //Create 3 buttons for R, P and S
