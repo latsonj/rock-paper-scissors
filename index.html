@@ -6,48 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./main.js" defer></script>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Rampart+One&display=swap" rel="stylesheet">
   <title>RPS Game</title>
 </head>
 
 <body>
-  <header class="header" id="header">
-    <img src="./images/rock-paper-scissors.png">
-    <h1 class="header text">Rock Paper Scissors</h1>
-  </header>
 
-  <section class="scores-container sections">
+  <header class="header section" id="header">
+    <h1 class="header text">Rock Paper Scissors</h1></header>
+
+  <div class="scores-container section">
     <div class="player-score-div">
-      <h2 class="player-score text">Player</h2>
-      <h3 class="player-score-num score numbers">0</h3></div>
+      <h2 class="player-score text">You</h2>
+      <h3 class="score numbers text">0</h3></div>
+    <div class="round-message-container sections container">
+      <p id="round-message" class="text"></p></div>
     <div class="computer-score-div">
       <h2 class="computer-score text">Computer</h2>
-      <h3 class="computer-score-num score numbers">0</h3></div>
-  </section>
+      <h3 class="score numbers text">0</h3></div>
+  </div>
 
-  <section class="player-rps-choice sections button-display">
-    <p class="flavor text">You</p>
-      <div class="rps-container">
-        <button id="rock" class="buttons player-buttons"><img src="./images/rock.png">Rock</button>
-        <button id="paper" class="buttons player-buttons"><img src="./images/paper.png">Paper</button>
-        <button id="scissors" class="buttons player-buttons"><img src="./images/scissors.png">Scissors</button>
-      </div>
-  </section>
+  <div class="player-rps-choice section button-display">
+    <p id="select" class="flavor text">SELECT FROM:</p>
+    <div class="rps-container">
+      <button class="buttons player-buttons"><img class="images" src="./images/rock.png" alt="Hand in shape of rock">ROCK</button>
+      <button class="buttons player-buttons"><img class="images" src="./images/paper.png" alt="Hand in shape of paper">PAPER</button>
+      <button class="buttons player-buttons"><img class="images" src="./images/scissors.png" alt="Hand in shape of scissors">SCISSORS</button></div>
+  </div>
 
-  <p id="vs" class="flavor text">VS<p>
+  <div class="computer-rps-choice section button-display">
+    <p id="cpu" class="flavor text">CPU CHOICE:</p>
+    <div class="rps-container">
+      <button class="buttons computer-buttons"><img class="images" src="./images/rock.png" alt="Hand in shape of rock">ROCK</button>
+      <button class="buttons computer-buttons"><img class="images" src="./images/paper.png" alt="Hand in shape of paper">PAPER</button>
+      <button class="buttons computer-buttons"><img class="images" src="./images/scissors.png" alt="Hand in shape of scissors">SCISSORS</button></div>
+  </div>
 
-  <section class="computer-rps-choice sections button-display">
-    <p class="flavor text">CPU</p>
-      <div class="rps-container">
-        <button id="rock" class="buttons computer-buttons"><img src="./images/rock.png">Rock</button>
-        <button id="paper" class="buttons computer-buttons"><img src="./images/paper.png">Paper</button>
-        <button id="scissors" class="buttons computer-buttons"><img src="./images/scissors.png">Scissors</button>
-      </div>
-  </section>
+  <button id="play-again" class="buttons"><img id="reload-image" class="images" src="./images/reload.png" alt="reload icon">PLAY AGAIN</button>
 
-  <section class="round-message-container sections container">
-    <p id="round message" class="text"></p>
-  </section>
-
-  <button id="play-again" class="buttons"><img src="./images/reload.png">Play again</button>
 </body>
 </html>

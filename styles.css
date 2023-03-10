@@ -1,11 +1,144 @@
-/* * {
-  border: 1px solid red;
-} */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #4682B4;
+  color: #222222;
+}
 
-#play-again {
-  visibility: hidden;
+.scores-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.player-score-div, .computer-score-div, #header, #round-message {
+  border: 1px solid #4682B4;
+  background-color: beige;
+  color: #222222;
+  border-radius: 5px;
+}
+
+.player-score-div, .computer-score-div {
+  padding: 5px 3em;
+}
+
+.button-display, .flavor {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  column-gap: 2em;
+  width: 500px;
+}
+
+.player-rps-choice, .scores-container {
+  margin-top: 2em;
+  font-size: 18px;
+}
+
+.player-buttons.buttons, #play-again {
+  cursor: pointer;
+  box-shadow: 0 12px #999;
+  border: 0px;
+}
+
+.player-buttons:hover {
+  background-color: #FF8000;
+  color:#222222;
+}
+
+.player-buttons:active {
+  background-color: #FF8000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.buttons {
+  padding: 0px 10px 1em 1em;
+  border-radius: 12px;
+  background-color: #FFA500;
+  color: beige;
 }
 
 .computer-buttons {
   pointer-events: none;
+  background-color: #FF7F27;
+  border: 0px;
+}
+
+.text, .buttons {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.numbers {
+  text-align: center;
+}
+
+.header, .numbers{
+  font-family: 'Rampart One', cursive;
+}
+
+.flavor {
+  font-size: 24px;
+}
+
+.rps-container {
+  display: flex;
+  column-gap: 5em;
+}
+
+#reload-image {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+#play-again {
+  display: flex;
+  width: 200px;
+  height: 75px;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  margin-top: 5em;
+  align-self: center;
+  visibility: hidden;
+  background-color: #C83200;
+}
+
+#play-again:hover {
+  background-color: maroon;
+  color: #4682B4;
+}
+
+#play-again:active {
+  background-color: maroon;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#round-message {
+  margin-top: 3em;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px 15px;
+  visibility: hidden;
+}
+
+.images {
+  padding: 5px 1em;
+}
+
+#cpu {
+  padding-top: 12px;
+}
+
+#select {
+  margin-top: 0px;
+  padding: 0px;
 }
