@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Rampart+One&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="./images/paper.png">
   <title>RPS Game</title>
 </head>
 
@@ -31,17 +32,17 @@
   <div class="player-rps-choice section button-display">
     <p id="select" class="flavor text">SELECT FROM:</p>
     <div class="rps-container">
-      <button class="buttons player-buttons"><img class="images" src="./images/rock.png" alt="Hand in shape of rock">ROCK</button>
-      <button class="buttons player-buttons"><img class="images" src="./images/paper.png" alt="Hand in shape of paper">PAPER</button>
-      <button class="buttons player-buttons"><img class="images" src="./images/scissors.png" alt="Hand in shape of scissors">SCISSORS</button></div>
+      <button id="rock" class="buttons player-buttons"><img class="images player-images" src="./images/rock.png" alt="Hand in shape of rock">ROCK</button>
+      <button id="paper" class="buttons player-buttons"><img class="images player-images" src="./images/paper.png" alt="Hand in shape of paper">PAPER</button>
+      <button id="scissors" class="buttons player-buttons"><img class="images player-images" src="./images/scissors.png" alt="Hand in shape of scissors">SCISSORS</button></div>
   </div>
 
   <div class="computer-rps-choice section button-display">
     <p id="cpu" class="flavor text">CPU CHOICE:</p>
     <div class="rps-container">
-      <button class="buttons computer-buttons"><img class="images" src="./images/rock.png" alt="Hand in shape of rock">ROCK</button>
-      <button class="buttons computer-buttons"><img class="images" src="./images/paper.png" alt="Hand in shape of paper">PAPER</button>
-      <button class="buttons computer-buttons"><img class="images" src="./images/scissors.png" alt="Hand in shape of scissors">SCISSORS</button></div>
+      <button id="cpu-rock" class="buttons computer-buttons"><img class="images" src="./images/rock.png" alt="Hand in shape of rock">ROCK</button>
+      <button id="cpu-paper" class="buttons computer-buttons"><img class="images" src="./images/paper.png" alt="Hand in shape of paper">PAPER</button>
+      <button id="cpu-scissors" class="buttons computer-buttons"><img class="images" src="./images/scissors.png" alt="Hand in shape of scissors">SCISSORS</button></div>
   </div>
 
   <button id="play-again" class="buttons"><img id="reload-image" class="images" src="./images/reload.png" alt="reload icon">PLAY AGAIN</button>

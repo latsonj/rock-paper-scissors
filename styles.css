@@ -48,13 +48,15 @@ body {
 
 .player-buttons:hover {
   background-color: #FF8000;
-  color:#222222;
+  color: #222222;
+  transition: 175ms;
+  transform: translateY(-2px);
 }
 
 .player-buttons:active {
   background-color: #FF8000;
   box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  transform: translateY(6px);
 }
 
 .buttons {
@@ -112,14 +114,17 @@ body {
 }
 
 #play-again:hover {
-  background-color: maroon;
-  color: #4682B4;
+  background-color: beige;
+  color: maroon;
+  transition: 175ms;
+  transform: translateY(-2px);
 }
 
 #play-again:active {
-  background-color: maroon;
+  background-color: beige;
+  color: maroon;
   box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  transform: translateY(6px);
 }
 
 #round-message {
