@@ -7,24 +7,34 @@ function getComputerChoice() {
 }
 
 //Declaring variables that reference RPS items via. JS
+const body = document.querySelector("body");
+
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+
 const cpuRock = document.querySelector("#cpu-rock");
 const cpuPaper = document.querySelector("#cpu-paper");
 const cpuScissors = document.querySelector("#cpu-scissors");
+
 const allPlayerButtons = document.querySelectorAll(".player-buttons");
 const allCpuButtons = document.querySelectorAll(".computer-buttons");
+
 const roundMessage = document.querySelector("#round-message");
+
 let playerScoreNum = document.querySelector(".player-score-num");
 let cpuScoreNum =  document.querySelector(".cpu-score-num");
+
 const playAgain = document.getElementById("play-again");
-const body = document.querySelector("body");
 
 //EventListeners
 rock.addEventListener("click", playRound);
 paper.addEventListener("click", playRound);
 scissors.addEventListener("click", playRound);
+
+body.addEventListener("click", endMessage);
+
+playAgain.addEventListener("click", resetGame);
 
 //Functions
 function resetColor() {
@@ -53,8 +63,6 @@ function roundTieMessage() {
   roundMessage.textContent = "It's a TIE!";
 }
 
-//Takes 3 parameters (one from calling getComputerChoice(), one from user clicks via. event listeners on RPS buttons.
-//User click gets event id to manipulate playerSelection) and compares them to output a string.
 function playRound(event, playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
   playerSelection = "";
@@ -116,36 +124,43 @@ function playRound(event, playerSelection, computerSelection) {
   }
 }
 
-//Used to increment score string.
-let playerScore = 0;
-let computerScore = 0;
-
-//Compares scores, outputs message when game function ends.
 function endMessage() {
   if (playerScoreNum.textContent >= 5) {
     roundMessage.textContent = "*You WIN the game*";
-    roundMessage.style.backgroundColor = "beige";
     roundMessage.style.color = "green";
     roundMessage.style.border = "4px solid green";
+
     rock.removeEventListener("click", playRound);
     paper.removeEventListener("click", playRound);
     scissors.removeEventListener("click", playRound);
+
     playAgain.style.visibility = "visible";
+
   } else if (cpuScoreNum.textContent >= 5) {
     roundMessage.textContent = "*CPU WINS the game*";
-    roundMessage.style.backgroundColor = "beige";
     roundMessage.style.color = "crimson";
     roundMessage.style.border = "4px solid crimson";
+
     rock.removeEventListener("click", playRound);
     paper.removeEventListener("click", playRound);
     scissors.removeEventListener("click", playRound);
+
     playAgain.style.visibility = "visible";
   }
 }
 
-body.addEventListener("click", endMessage);
-
-function resetScore() {
+function resetGame() {
+  resetColor();
   playerScoreNum.textContent = 0;
   cpuScoreNum.textContent = 0;
+
+  roundMessage.style.visibility = "hidden";
+  playAgain.style.visibility = "hidden";
+
+  rock.addEventListener("click", playRound);
+  paper.addEventListener("click", playRound);
+  scissors.addEventListener("click", playRound);
+
+  roundMessage.style.color = "#222222";
+  roundMessage.style.border = "0px";
 }
