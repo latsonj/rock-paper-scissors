@@ -15,11 +15,18 @@ const cpuPaper = document.querySelector("#cpu-paper");
 const cpuScissors = document.querySelector("#cpu-scissors");
 const allPlayerButtons = document.querySelectorAll(".player-buttons");
 const allCpuButtons = document.querySelectorAll(".computer-buttons");
+const roundMessage = document.querySelector("#round-message");
+let playerScoreNum = document.querySelector(".player-score-num");
+let cpuScoreNum =  document.querySelector(".cpu-score-num");
+const playAgain = document.getElementById("play-again");
+const body = document.querySelector("body");
 
+//EventListeners
 rock.addEventListener("click", playRound);
 paper.addEventListener("click", playRound);
 scissors.addEventListener("click", playRound);
 
+//Functions
 function resetColor() {
   let playerButtonList = Array.from(allPlayerButtons);
   let cpuButtonList = Array.from(allCpuButtons);
@@ -31,49 +38,69 @@ function resetColor() {
   }
 }
 
+function roundWinMessage() {
+  roundMessage.style.visibility = "visible";
+  roundMessage.textContent = "You WIN this round! :)";
+}
+
+function roundLoseMessage() {
+  roundMessage.style.visibility = "visible";
+  roundMessage.textContent = "Sorry, you LOSE this round! :(";
+}
+
+function roundTieMessage() {
+  roundMessage.style.visibility = "visible";
+  roundMessage.textContent = "It's a TIE!";
+}
+
 //Takes 3 parameters (one from calling getComputerChoice(), one from user clicks via. event listeners on RPS buttons.
 //User click gets event id to manipulate playerSelection) and compares them to output a string.
 function playRound(event, playerSelection, computerSelection) {
   computerSelection = getComputerChoice();
   playerSelection = "";
   playerSelection += event.currentTarget.id;
-  console.log(playerSelection);
-  console.log(computerSelection);
+
   if (playerSelection === "paper" && computerSelection === "rock") {
     resetColor();
     paper.style.backgroundColor = "yellowGreen";
     cpuRock.style.backgroundColor = "crimson";
-    console.log("CPU chose ROCK. YOU WIN this round! :)");
+    roundWinMessage();
+    playerScoreNum.textContent++;
 
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     resetColor();
     rock.style.backgroundColor = "yellowGreen";
     cpuScissors.style.backgroundColor = "crimson";
-    console.log("CPU chose SCISSORS. YOU WIN this round! :)");
+    roundWinMessage();
+    playerScoreNum.textContent++;
 
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     resetColor();
     scissors.style.backgroundColor = "yellowGreen";
     cpuPaper.style.backgroundColor = "crimson";
-    console.log("CPU chose PAPER. YOU WIN this round! :)");
+    roundWinMessage();
+    playerScoreNum.textContent++;
 
   } else if (playerSelection === "rock" && computerSelection === "paper") {
     resetColor();
     rock.style.backgroundColor = "crimson";
     cpuPaper.style.backgroundColor = "yellowGreen";
-    console.log("CPU chose PAPER. Sorry, YOU LOST this round! :(");
+    roundLoseMessage();
+    cpuScoreNum.textContent++;
 
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     resetColor();
     paper.style.backgroundColor = "crimson";
     cpuScissors.style.backgroundColor = "yellowGreen";
-    console.log("CPU chose SCISSORS. Sorry, YOU LOST this round! :(");
+    roundLoseMessage();
+    cpuScoreNum.textContent++;
 
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     resetColor();
     scissors.style.backgroundColor = "crimson";
     cpuRock.style.backgroundColor = "yellowGreen";
-    console.log("CPU chose ROCK. Sorry, YOU LOST this round! :(");
+    roundLoseMessage();
+    cpuScoreNum.textContent++;
 
   } else if (playerSelection === computerSelection) {
     resetColor();
@@ -85,60 +112,40 @@ function playRound(event, playerSelection, computerSelection) {
     } else if (event.currentTarget.id === "rock") {
       cpuRock.style.backgroundColor = "gray";
     }
-    console.log("CPU chose the SAME. It's a TIE!");
+    roundTieMessage();
   }
 }
-
-//Variables used to check return string from playRound() to determine win/loss.
-const smiley = ":)";
-const frown = ":(";
-const tie = "TIE";
 
 //Used to increment score string.
 let playerScore = 0;
 let computerScore = 0;
 
-//Loops 5 times, prompts player to enter R, P or S. Outputs playRound() return string and score tally.
-//Line 44-46 variables used to check for substring in return string. Line 49-50 variables used to keep score.
-//Defines playRound() parameters.
-/*function game() {
-  let i = 5;
-  do {
-
-    let computerSelection = getComputerChoice();
-
-    if (playRound(playerSelection, computerSelection).includes(smiley)) {
-      console.log(playRound(playerSelection, computerSelection));
-      console.log(`Player: ${++playerScore}     Computer: ${computerScore}`);
-
-    } else if (playRound(playerSelection, computerSelection).includes(frown)) {
-      console.log(playRound(playerSelection, computerSelection));
-      console.log(`Player: ${playerScore}     Computer: ${++computerScore}`);
-
-    } else if (playRound(playerSelection, computerSelection).includes(tie)) {
-      console.log(playRound(playerSelection, computerSelection));
-      console.log(`Player: ${playerScore}     Computer: ${computerScore}`)
-    }
-  } while ((playerScore || computerScore) < i);
-}*/
-
 //Compares scores, outputs message when game function ends.
-/*function endMessage() {
-
-  if (playerScore > computerScore) {
-    console.log("You have defeated the computer!")
-
-  } else if (playerScore < computerScore) {
-    console.log("The computer has defeated you!")
-
-  } else {
-    console.log("Draw game!")
+function endMessage() {
+  if (playerScoreNum.textContent >= 5) {
+    roundMessage.textContent = "*You WIN the game*";
+    roundMessage.style.backgroundColor = "beige";
+    roundMessage.style.color = "green";
+    roundMessage.style.border = "4px solid green";
+    rock.removeEventListener("click", playRound);
+    paper.removeEventListener("click", playRound);
+    scissors.removeEventListener("click", playRound);
+    playAgain.style.visibility = "visible";
+  } else if (cpuScoreNum.textContent >= 5) {
+    roundMessage.textContent = "*CPU WINS the game*";
+    roundMessage.style.backgroundColor = "beige";
+    roundMessage.style.color = "crimson";
+    roundMessage.style.border = "4px solid crimson";
+    rock.removeEventListener("click", playRound);
+    paper.removeEventListener("click", playRound);
+    scissors.removeEventListener("click", playRound);
+    playAgain.style.visibility = "visible";
   }
-}*/
+}
 
-//Invoking functions.
-//game();
-//endMessage();
+body.addEventListener("click", endMessage);
 
-//Add div that displays results with DOM console.logs
-//Running score not Bo5/ Game is now 1st to 5
+function resetScore() {
+  playerScoreNum.textContent = 0;
+  cpuScoreNum.textContent = 0;
+}
