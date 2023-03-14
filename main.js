@@ -1,5 +1,5 @@
 //Refactor function into array and randomizes choice through math methods
-let choices = ["rock", "paper", "scissors"]
+let choices = ["rock", "paper", "scissors"];
 function getComputerChoice() {
   let choiceIndex = Math.floor(Math.random() * choices.length);
   let computerSelection = choices[choiceIndex];
@@ -40,6 +40,7 @@ playAgain.addEventListener("click", resetGame);
 function resetColor() {
   let playerButtonList = Array.from(allPlayerButtons);
   let cpuButtonList = Array.from(allCpuButtons);
+
   for (let playerButtons of playerButtonList) {
     playerButtons.style.backgroundColor = "#FF8000";
   }
@@ -63,7 +64,7 @@ function roundTieMessage() {
   roundMessage.textContent = "It's a TIE!";
 }
 
-function playRound(event, playerSelection, computerSelection) {
+function playRound(event) {
   computerSelection = getComputerChoice();
   playerSelection = "";
   playerSelection += event.currentTarget.id;
