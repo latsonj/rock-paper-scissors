@@ -12,7 +12,7 @@ My **live demo** can be found [here](https://latsonj.github.io/rock-paper-scisso
 
 ## Screenshots
 
-  <img src="./images/rpsREADME1.png" alt="Screenshot of live demo" width="400px"/> <img src="./images/rpsREADME2.png" alt="Screenshot of live demo - paper in red" height="400px"/>
+  <img src="./images/rpsREADME1.png" alt="Screenshot of live demo" width="550px"/>
 
 ## Learning Observations
 
