@@ -20,7 +20,7 @@ This project was the first project to put the *focal point* on JavaScript, chall
 
 Rock, paper, scissors familiarized me with **writing functions**, **pseudo-code** and **debugging**.
 
-Making the console version helped me to learn basic **loops** and **conditionals** while utilizing **Math functions** plus **conditional & numerical** operators. It also introduced me to **prompts** and a variety of **string methods**. Making the UI focused more on **event listeners** and **manipulating the DOM**. I struggled with the **bubbling** behavior of events; I had included images inside all my buttons and was confused as to why the events weren't firing properly. Fortunately, I found a solution by looking at the warnings and running through my code and fixed the event target code. I found both parts very helpful and was able to build a solid understanding of the basics of JavaScript.
+Making the console version helped me to learn basic **loops** and **conditionals** while utilizing **Math functions** plus **conditional & numerical** operators. It also introduced me to **prompts** and a variety of **string methods**. Making the UI focused more on **event listeners** and **manipulating the DOM**. I struggled with the **bubbling** behavior of events; I had included images inside all my buttons and was confused as to why the events weren't firing properly. Fortunately, I found a solution by looking at the warnings and running through my code and fixed the event target code. I found both parts very helpful, had to **refactor** some code and was able to build a solid understanding of the basics of JavaScript.
 
 Overall, this was a very fun project to make and the CSS aspect was very satisfying to work through.
 
