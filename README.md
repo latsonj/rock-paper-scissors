@@ -33,7 +33,6 @@ Overall, this was a very fun project to make and the CSS aspect was very satisfy
 This project was created using fonts and images from:
 
 - [Google Fonts (Archivo Black, Rampart One)](https://fonts.google.com/)
-
 - [Reload icons created by Uniconlabs - Flaticon](https://www.flaticon.com/free-icons/reload)
 - [Rock paper scissors icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/rock-paper-scissors)
 - [Rock paper scissors icons created by Cap Cool - Flaticon](https://www.flaticon.com/free-icons/rock-paper-scissors)
