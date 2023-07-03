@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors
 
-A webpage where you can play rock, paper, scissors against a computer. Project completed for The Odin Project [curriculum](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors).
+A webpage where you can play rock, paper, scissors against a computer. Project completed for **The Odin Project** [curriculum](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors).
 
 My **live demo** can be found [here](https://latsonj.github.io/rock-paper-scissors/). This project was created to be played in a browser console, then revisited by making a UI. 
 
