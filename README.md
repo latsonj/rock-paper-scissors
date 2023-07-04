@@ -4,17 +4,17 @@ A webpage where you can play rock, paper, scissors against a computer. Project c
 
 My **live demo** can be found [here](https://latsonj.github.io/rock-paper-scissors/). This project was created to be played in a browser console, then revisited by making a UI. 
 
-## Technologies used
+## 🛠️ Technologies used
 
  - **HTML5**
  - **CSS3**
  - **Vanilla JS**
 
-## Screenshots
+## 📷 Screenshots
 
   <img src="./images/rpsREADME1.png" alt="Screenshot of live demo" width="550px"/>
 
-## Learning Observations
+## 📝 Learning Observations
 
 This project was the first project to put the *focal point* on JavaScript, challenging learners to write clean code that functioned well.
 
@@ -39,6 +39,6 @@ This project was created using fonts and images from:
 - [Closed fist icons created by Cap Cool - Flaticon](https://www.flaticon.com/free-icons/closed-fist)
 - [On hold icons created by Cap Cool - Flaticon](https://www.flaticon.com/free-icons/on-hold)
 
-## Author
+## 👤 Author
 
 Created by [latsonj](https://github.com/latsonj)
